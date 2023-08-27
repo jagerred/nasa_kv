@@ -28,7 +28,7 @@ export default function Home() {
       const asteroidsData = createAsteroidsArray(data.near_earth_objects);
 
       setAsteroids(asteroidsData);
-      setNextLink(data.links.next);
+      setNextLink(data.links.next + '/');
       setLoading(false);
     };
 
@@ -48,7 +48,7 @@ export default function Home() {
         const { data } = await axios(nextLink);
         const asteroidsData = createAsteroidsArray(data.near_earth_objects);
         setAsteroids([...asteroids, ...asteroidsData]);
-        setNextLink(data.links.next);
+        setNextLink(data.links.next + '/');
         setExtraLoading(false);
       }
     };
