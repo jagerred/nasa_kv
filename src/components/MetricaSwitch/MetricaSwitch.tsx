@@ -1,5 +1,5 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
+
 import { useContext } from 'react';
 
 import { Metrica, MetricaContext } from '@/context/Metrica';

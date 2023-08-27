@@ -1,10 +1,8 @@
-import axios from 'axios';
-
 import AsteroidApproach from '@/components/AsteroidApproach/AsteroidApproach';
+import { getAsteroids } from '@/helpers/api/getAsteroids';
 import { bindStyles } from '@/helpers/bindStyles';
 import { formatDistance } from '@/helpers/formatDistance';
 import { getStringFromDate } from '@/helpers/getStringFromDate';
-import { Asteroid } from '@/types/astreoids';
 
 import styles from './asteroid.module.css';
 
@@ -14,15 +12,10 @@ interface Props {
   };
 }
 const cx = bindStyles(styles);
-export const getAsteroid = async (id: string) => {
-  const { data } = await axios(
-    `https://api.nasa.gov/neo/rest/v1/neo/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-  );
-  return data;
-};
 
 const AsteroidPage = async ({ params: { id } }: Props) => {
-  const data: Asteroid = await getAsteroid(id);
+  const data = await getAsteroids(id);
+
   const { close_approach_data, name } = data;
 
   const approachList = close_approach_data.map((approach) => {
