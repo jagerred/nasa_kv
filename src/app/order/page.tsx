@@ -10,9 +10,6 @@ import styles from './order.module.css';
 
 const cx = bindStyles(styles);
 
-export const metadata: Metadata = {
-  title: 'Order'
-};
 const Order = () => {
   const { cart } = useContext(CartContext);
   const titleText = cart.length > 0 ? 'Заказ отправлен!' : 'Нечего отправлять...';
