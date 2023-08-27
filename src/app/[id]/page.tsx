@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import AsteroidApproach from '@/components/AsteroidApproach/AsteroidApproach';
 import { getAsteroids } from '@/helpers/api/getAsteroids';
 import { bindStyles } from '@/helpers/bindStyles';
@@ -12,6 +14,10 @@ interface Props {
   };
 }
 const cx = bindStyles(styles);
+
+export const generateMetadata = async ({ params: { id } }: Props): Promise<Metadata> => ({
+  title: `Asteroid ${id}`
+});
 
 const AsteroidPage = async ({ params: { id } }: Props) => {
   const data = await getAsteroids(id);
