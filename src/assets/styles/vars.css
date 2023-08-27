@@ -1,0 +1,7 @@
+:root {
+  --orange-base: rgb(248, 102, 0);
+  --orange-smooth: rgba(248, 102, 0, 0.15);
+  --red-smooth: rgba(245, 222, 217, 1);
+  --arrow-color: rgba(255, 255, 255, 0.5);
+  --gray: rgb(35, 37, 38);
+}

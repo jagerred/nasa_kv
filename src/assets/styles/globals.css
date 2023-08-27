@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  font-size: 16px;
+  overflow-y: scroll;
+}
+button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+.body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
+  background-image: url(../img/png/planet.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 30%;
+  background-position: -10vw 56%;
+}
+.main {
+  margin: 0 35vw 25vw;
+  max-width: 960px;
+  padding: 1rem;
+}
+@media (max-width: 1279px) {
+  .body {
+    background-size: 32%;
+    background-position: -10vw 60%;
+  }
+  .main {
+    position: static;
+    margin-left: 20vw;
+    margin-right: 6vw;
+  }
+}
+@media (max-width: 768px) {
+  .body {
+    background-size: 60%;
+    background-position: -46vw 50%;
+  }
+  .main {
+    position: static;
+    margin-left: 20vw;
+    margin-right: 6vw;
+  }
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  color: white;
+}
+.title {
+  display: inline-block;
+  width: 300px;
+  font-weight: 28px;
+}
+.metrica {
+  display: flex;
+  gap: 4px;
+}
+.button {
+  color: inherit;
+  background-color: transparent;
+}
+.active {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .container {
+    width: 279px;
+  }
+  .title {
+    width: 100%;
+  }
+}
